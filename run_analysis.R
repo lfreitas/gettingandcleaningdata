@@ -607,6 +607,15 @@ varnames <- c("tBodyAcc-mean()-X",
 # clean up variables names
 varnames <- tolower(gsub( "[^[:alnum:]]", "", varnames))
 
+varnames <- gsub("tbody","timebody", varnames)
+varnames <- gsub("fbody","frequencybody", varnames)
+varnames <- gsub("tgravity","timegravity", varnames)
+varnames <- gsub("std","stdev", varnames)
+varnames <- gsub("acc","acceleration", varnames)
+varnames <- gsub("gyro","gyroscope", varnames)
+varnames <- gsub("mag","magnitude", varnames)
+
+
 # use preceding variable names vector to label variables descriptively
 colnames(all.dat) <- c(varnames, "subject", "act", "actlabel")
 
@@ -622,16 +631,10 @@ keepnames <- varnames[c(means, stdevs)]
 # keep mean/std dev variables, along with subject ID and activity label
 keep.dat <- all.dat[, c("subject", "actlabel", keepnames)]
 
-keepnames <- gsub("tbody","timebody", keepnames)
-keepnames <- gsub("fbody","frequencybody", keepnames)
-keepnames <- gsub("std","stdev", keepnames)
-keepnames <- gsub("acc","accelerometer", keepnames)
-keepnames <- gsub("gyro","gyroscope", keepnames)
-keepnames <- gsub("mag","magnitude", keepnames)
 
 # by subject and activity, obtain the mean of the measures
 #sum.dat <- group_by(keep.dat, subject, actlabel) %>%
 #   summarise_each(funs(mean))
 
 # write tidied data set to CSV file
-write.table(all.dat, "tidied_activities.txt", row.names = F)
+write.table(keep.dat, "tidied_activities.txt", row.names = F)
