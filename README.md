@@ -8,7 +8,7 @@ My repo for Coursera's Getting and Cleaning Data class project. The code's workf
 4. Appropriately labels the data set with descriptive variable names
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. Note that nothing new is computed: only the columns with mean and standard deviation data are extracted
 
-Variable names are defined from the following components:
+Measurement variable names are defined from the following components:
 * angle - for variables that start with angle, the rest of the variable describe the angle being measured
 * timebody - time domain body signal
 * frequencybody - frequency domain signal obtained via Fast Fourier Transform
@@ -21,4 +21,8 @@ Variable names are defined from the following components:
 * mean - average of measurement
 * meanfreq: weighted average of the frequency components to obtain a mean frequency
 
-For example, frequencybodybodyaccelerationjerkmagnitudemean is the magnitude of jerk converted to a frequency domain signal for body acceleration.
+For example, frequencybodybodyaccelerationjerkmagnitudemean is the magnitude of jerk converted to a frequency domain signal for body acceleration. 
+
+There are 86 measures included in the data set. The "subject" variable identifies subjects in the experiment, and the "actlabel" variable identifies the activity completed at the time.
+
+
