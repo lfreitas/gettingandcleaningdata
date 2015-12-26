@@ -617,7 +617,7 @@ varnames <- gsub("mag","magnitude", varnames)
 
 
 # use preceding variable names vector to label variables descriptively
-colnames(all.dat) <- c(varnames, "subject", "act", "actlabel")
+colnames(all.dat) <- c(varnames, "subject", "act", "activitylabel")
 
 # select indeces for all variable names related to means
 means <- grep("mean", varnames)
@@ -629,11 +629,11 @@ stdevs <- grep("std", varnames)
 keepnames <- varnames[c(means, stdevs)]
 
 # keep mean/std dev variables, along with subject ID and activity label
-keep.dat <- all.dat[, c("subject", "actlabel", keepnames)]
+keep.dat <- all.dat[, c("subject", "activitylabel", keepnames)]
 
 
 # by subject and activity, obtain the mean of the measures
-#sum.dat <- group_by(keep.dat, subject, actlabel) %>%
+#sum.dat <- group_by(keep.dat, subject, activitylabel) %>%
 #   summarise_each(funs(mean))
 
 # write tidied data set to CSV file
