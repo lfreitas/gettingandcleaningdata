@@ -11,11 +11,14 @@ My repo for Coursera's Getting and Cleaning Data class project. The code's workf
 Variable names are defined from the following components:
 * angle - for variables that start with angle, the rest of the variable describe the angle being measured
 * timebody - time domain body signal
-* frequencybody - frequency domain signal
+* frequencybody - frequency domain signal obtained via Fast Fourier Transform
 * acceleration - acceleration measurement 
 * jerk - jerk measurement
+* magnitude - magnitude of the three-dimensional signals
 * gyroscope - measurements from a gyroscope
 * x/y/z - axis for which the measurement is taken
 * stdev - standard deviation
 * mean - average of measurement
 * meanfreq: weighted average of the frequency components to obtain a mean frequency
+
+For example, frequencybodybodyaccelerationjerkmagnitudemean is the magnitude of jerk converted to a frequency domain signal for body acceleration.
